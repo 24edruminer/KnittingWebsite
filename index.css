@@ -1,0 +1,98 @@
+body {
+    background-color: #ccc;
+}
+
+a {
+    color: #fdfd96;
+}
+
+a:visited {
+    color: #fdfd96;
+}
+
+#page-title {
+    font-size: 6em;
+    font-family: 'Kalam', cursive;
+    position: fixed;
+    top: 1%;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+#page-subtitle {
+    font-size: 1.5em;
+    font-family: 'Kalam', cursive;
+    position: fixed;
+    width: 100%;
+    top: 14vh;
+    margin: 0;
+    text-align: center;
+}
+#yarn {
+    position: fixed;
+    width: 1000%;
+    height: 60vh;
+    left: 15vw;
+    top: 20vh;
+    background-color: #A7C7E7;
+    overflow: hidden;
+}
+
+#yarn-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    overflow:hidden;
+    margin-left: 4vw;
+    left: 0;
+    transition: left 0.3s ease-out;
+}
+
+.yarn-card {
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;  
+    top: calc(50% - 12.5vw);
+    width: 20vw;
+    margin-right: 3vw;
+    height: 25vw;
+    border: 3px dashed grey;
+    text-align: center;
+    text-overflow: hidden;
+}
+
+.card-image {
+    width: 15vw;
+    height: 15vw;
+    margin-top: 2.5vh;
+}
+.card-video {
+    width: 15vw;
+    height: 15vw;
+    margin-top: 2.5vh;
+}
+.card-text {
+    font-size: 1.2em;
+    text-overflow: hidden;
+    font-family: 'Kalam', cursive;
+    font-weight: 600;
+    padding: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 30px;
+}
+
+.card-text-no-image {
+    font-size: 1.2em;
+    text-overflow: hidden;
+    font-family: 'Kalam', cursive;
+    font-weight: 600;
+    padding: 10px;
+    margin-top: -15vh;
+    margin-bottom: 0;
+}
+
+.hidden {
+    visibility: hidden !important;
+}
