@@ -36,6 +36,7 @@ a:visited {
     top: 20vh;
     background-color: #A7C7E7;
     overflow: hidden;
+
 }
 
 #yarn-container {
@@ -57,7 +58,7 @@ a:visited {
     width: 20vw;
     margin-right: 3vw;
     height: 25vw;
-    border: 3px dashed grey;
+    border: 3px solid black;
     text-align: center;
     text-overflow: hidden;
 }
@@ -91,6 +92,48 @@ a:visited {
     padding: 10px;
     margin-top: -15vh;
     margin-bottom: 0;
+}
+
+#needle-1 {
+    position: fixed;
+    left: 10vw;
+    top: 22vh;
+    z-index: 3;
+    transform: scale(2.3) rotate(-20deg);
+    animation: needle1-move;
+    animation-duration: 0.1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+#needle-2 {
+    position: fixed;
+    left: 11vw;
+    top: 52vh;
+    z-index: 3;
+    transform: scale(2.3) rotate(200deg);
+    animation: needle2-move;
+    animation-duration: 0.1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes needle1-move {
+    from {transform: scale(2.3) rotate(-20deg);}
+    to {transform: scale(2.3) rotate(-25deg);}
+  }
+@keyframes needle2-move {
+    from {transform: scale(2.3) rotate(200deg);}
+    to {transform: scale(2.3) rotate(195deg);}
+  }
+
+#KnitStrip {
+    position: fixed;
+    width: 27vw;
+    height: 60vh;
+    background-image: url("Images/KnitStrip5.webp");
+    background-size:auto;
+    background-position: top right;
+    background-repeat: repeat-x;
+    transition: width 0.3s ease-out;
 }
 
 .hidden {

@@ -1,25 +1,33 @@
 var yarnContainer = document.getElementById("yarn-container");
-var offset = 0;
+var yarnImage = document.getElementById("KnitStrip");
+var maxOffset = (yarnContainer.children.length - 2) * -46 + 5;
+var offset = maxOffset
 var scrollFactor = 5;
+adjustScrollContent(0)
 window.addEventListener("wheel", (event) => {
-    if (event.deltaY > 0) {
+    adjustScrollContent(event.deltaY)
+})
+
+function adjustScrollContent(dY) {
+    if (dY > 0) {
         console.log("down")
-    }else if (event.deltaY < 0) {
+    }else if (dY < 0) {
         console.log("up")
     }
 
-    offset -= event.deltaY / 100 * scrollFactor;
-    if (offset > 0) {
-        offset = 0;
+    maxWidth = (yarnContainer.children.length - 3) * 23 - 10;
+    offset += dY / 100 * scrollFactor;
+    if (offset > -1 * maxWidth - 2) {
+        offset = -maxWidth - 2;
     }
 
-    maxWidth = (yarnContainer.children.length - 3) * 23 * -1 + 10; //make it negative to match sign of other stuff
-    console.log(maxWidth)
-    if (offset < maxWidth) {
-        offset = maxWidth
+    if (offset < maxOffset) {
+        offset = maxOffset
     }
-    yarnContainer.setAttribute("style", "left: " + offset + "vw");
-})
+    console.log(maxWidth, offset, maxOffset)
+    yarnContainer.setAttribute("style", "left: " + (maxWidth + offset) + "vw;");
+    yarnImage.setAttribute("style", "width: " + ((maxOffset - offset) * -1 + 27) +"vw;")
+}
 
 resizeText();
 function resizeText() {
